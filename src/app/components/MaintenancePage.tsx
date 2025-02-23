@@ -41,14 +41,15 @@ export default function MaintenancePage() {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-gray-600 mt-3 text-lg"
-        >
-          We're making improvements to provide you with the best experience.
-          Stay tuned!
-        </motion.p>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.6, duration: 0.6 }}
+  className="text-gray-600 mt-3 text-lg"
+>
+  We&apos;re making improvements to provide you with the best experience.
+  Stay tuned!
+</motion.p>
+
 
         {/* Contact Info */}
         <motion.p
