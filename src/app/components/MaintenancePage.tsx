@@ -67,7 +67,7 @@ Stay tuned!
           transition={{ delay: 1, duration: 0.6 }}
           className="text-lg font-semibold text-gray-900"
         >
-          support@micbam.com
+          info@micbam.com
         </motion.p>
 
         {/* Social Icons */}
