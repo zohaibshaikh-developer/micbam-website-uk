@@ -7,8 +7,12 @@ import Navbar from "./Navbar";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 // Custom Arrow Components
-const NextArrow = (props: any) => {
-  const { onClick } = props;
+// Define prop type correctly
+interface ArrowProps {
+  onClick?: () => void;
+}
+
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => {
   return (
     <div
       className="absolute top-1/2 right-5 transform -translate-y-1/2 cursor-pointer z-10 text-white bg-black bg-opacity-50 p-3 rounded-full"
@@ -19,8 +23,7 @@ const NextArrow = (props: any) => {
   );
 };
 
-const PrevArrow = (props: any) => {
-  const { onClick } = props;
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
   return (
     <div
       className="absolute top-1/2 left-5 transform -translate-y-1/2 cursor-pointer z-10 text-white bg-black bg-opacity-50 p-3 rounded-full"

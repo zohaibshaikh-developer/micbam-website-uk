@@ -46,8 +46,8 @@ export default function MaintenancePage() {
   transition={{ delay: 0.6, duration: 0.6 }}
   className="text-gray-600 mt-3 text-lg"
 >
-  We&apos;re making improvements to provide you with the best experience.
-  Stay tuned!
+We&apos;re making improvements to provide you with the best experience.
+Stay tuned!
 </motion.p>
 
 
