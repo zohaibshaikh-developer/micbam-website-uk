@@ -14,7 +14,10 @@ import {
   Briefcase,
   MessageCircle,
 } from "lucide-react";
-import { Player } from "@lottiefiles/react-lottie-player";
+import dynamic from "next/dynamic";
+const Player = dynamic(() => import("@lottiefiles/react-lottie-player").then(mod => mod.Player), {
+  ssr: false,
+});
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 import { FC } from "react";
