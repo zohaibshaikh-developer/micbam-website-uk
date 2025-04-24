@@ -17,6 +17,7 @@ import {
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
+import { FC } from "react";
 
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -172,7 +173,23 @@ const ContactUs = () => {
   );
 };
 
-const InputWithIcon = ({ Icon, name, placeholder, type = "text", required = false }) => (
+
+
+type InputWithIconProps = {
+  Icon: FC<{ size?: number; className?: string }>;
+  name: string;
+  placeholder: string;
+  type?: string;
+  required?: boolean;
+};
+
+const InputWithIcon = ({
+  Icon,
+  name,
+  placeholder,
+  type = "text",
+  required = false,
+}: InputWithIconProps) => (
   <div className="relative">
     <Icon className="absolute left-3 top-[14px] text-green-600" size={18} />
     <input
@@ -184,6 +201,7 @@ const InputWithIcon = ({ Icon, name, placeholder, type = "text", required = fals
     />
   </div>
 );
+
 
 const ContactBlock = () => (
   <div className="space-y-5">
