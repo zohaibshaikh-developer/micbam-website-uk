@@ -291,51 +291,52 @@ const Services = () => {
             }`}
           >
             {/* IMAGE or LOTTIE */}
-            {section.lottie ? (
-              <motion.div
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="w-full max-w-md mx-auto"
-              >
-                {section.lottie.endsWith(".json") ? (
-                  <Player
-                    src={section.lottie}
-                    autoplay
-                    loop
-                    style={{
-                      width: "100%",
-                      height: "400px",
-                      background: "transparent",
-                    }}
-                  />
-                ) : (
-                  <DotLottieReact
-                    src={section.lottie}
-                    autoplay
-                    loop
-                    style={{
-                      width: "100%",
-                      height: "400px",
-                      background: "transparent",
-                    }}
-                  />
-                )}
-              </motion.div>
-            ) : (
-              <div className="bg-transparent overflow-hidden rounded-lg shadow-lg border">
-                <Image
-                  src={section.image}
-                  alt={section.title}
-                  width={800}
-                  height={600}
-                  className="object-cover w-full h-full transition duration-300 hover:scale-105"
-                  priority={activeIndex === 0} // ✅ Only preload for visible section
-                  loading={activeIndex === 0 ? "eager" : "lazy"} // 👌 Optional: be explicit
-                />
-              </div>
-            )}
+            {"lottie" in section && section.lottie ? (
+  <motion.div
+    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="w-full max-w-md mx-auto"
+  >
+    {section.lottie.endsWith(".json") ? (
+      <Player
+        src={section.lottie}
+        autoplay
+        loop
+        style={{
+          width: "100%",
+          height: "400px",
+          background: "transparent",
+        }}
+      />
+    ) : (
+      <DotLottieReact
+        src={section.lottie}
+        autoplay
+        loop
+        style={{
+          width: "100%",
+          height: "400px",
+          background: "transparent",
+        }}
+      />
+    )}
+  </motion.div>
+) : (
+  <div className="bg-transparent overflow-hidden rounded-lg shadow-lg border">
+    <Image
+      src={section.image}
+      alt={section.title}
+      width={800}
+      height={600}
+      className="object-cover w-full h-full transition duration-300 hover:scale-105"
+      priority={activeIndex === 0}
+      loading={activeIndex === 0 ? "eager" : "lazy"}
+    />
+  </div>
+)}
+
 
             {/* TEXT */}
             <div>
