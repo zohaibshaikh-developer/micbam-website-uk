@@ -1,6 +1,18 @@
 "use client";
-import Services from "../screens/Services";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
-export default function ServicesPage() {
-  return <Services />;
-}
+const Services = dynamic(() => import("../screens/Services"), {
+  ssr: false,
+});
+
+const ServicesPage = () => {
+  return (
+    <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+      <Services />
+    </Suspense>
+  );
+};
+
+export default ServicesPage;
+
