@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
+      },
+      
     },
   },
   plugins: [],

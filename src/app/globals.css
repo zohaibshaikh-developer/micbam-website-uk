@@ -22,3 +22,44 @@ html, body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes blinkPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.blink-pulse {
+  animation: blinkPulse 2s ease-in-out infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 6;
+  stroke-dashoffset: 1000;
+  animation: dash 2s ease-out forwards;
+}
