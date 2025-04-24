@@ -10,8 +10,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { geoEqualEarth } from "d3-geo";
 
-const geoUrl =
-  "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 const markers = [
   { name: "Nigeria", coordinates: [8.6753, 9.082] },
@@ -71,7 +70,7 @@ const GlobalPresence = () => {
     return (
       <>
         <Geographies geography={geoUrl}>
-          {({ geographies }) =>
+          {({ geographies }: { geographies: any[] }) =>
             geographies.map((geo) => (
               <Geography
                 key={geo.rsmKey}
@@ -79,7 +78,7 @@ const GlobalPresence = () => {
                 tabIndex={-1}
                 style={{
                   default: {
-                    fill: "#f1f8f5", // soft sage green
+                    fill: "#f1f8f5",
                     stroke: "#d4e8dd",
                     strokeWidth: 0.5,
                     outline: "none",
