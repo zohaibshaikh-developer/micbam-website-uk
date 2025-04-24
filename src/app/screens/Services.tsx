@@ -3,8 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Player } from "@lottiefiles/react-lottie-player";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import dynamic from "next/dynamic";
+const Player = dynamic(() => import("@lottiefiles/react-lottie-player").then(mod => mod.Player), {
+  ssr: false,
+});
+
+const DotLottieReact = dynamic(() => import("@lottiefiles/dotlottie-react").then(mod => mod.DotLottieReact), {
+  ssr: false,
+});
 
 import { useSearchParams } from "next/navigation";
 
