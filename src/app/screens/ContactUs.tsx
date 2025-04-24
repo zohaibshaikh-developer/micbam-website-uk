@@ -232,7 +232,14 @@ const ContactBlock = () => (
   </div>
 );
 
-const LocationBlock = ({ title, mapLink, address, iframeSrc }) => (
+type LocationBlockProps = {
+  title: string;
+  mapLink: string;
+  address: string[];
+  iframeSrc: string;
+};
+
+const LocationBlock = ({ title, mapLink, address, iframeSrc }: LocationBlockProps) => (
   <div>
     <h4 className="text-lg font-bold text-green-700 flex items-center gap-2">
       <Building2 size={18} /> {title}
