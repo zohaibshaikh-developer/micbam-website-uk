@@ -323,7 +323,7 @@ const Services = () => {
       />
     )}
   </motion.div>
-) : (
+) : "image" in section && section.image ? (
   <div className="bg-transparent overflow-hidden rounded-lg shadow-lg border">
     <Image
       src={section.image}
@@ -335,7 +335,8 @@ const Services = () => {
       loading={activeIndex === 0 ? "eager" : "lazy"}
     />
   </div>
-)}
+) : null}
+
 
 
             {/* TEXT */}
