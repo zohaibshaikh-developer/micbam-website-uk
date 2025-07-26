@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import scrollbar from "tailwind-scrollbar";
 
 const config: Config = {
   content: [
@@ -13,12 +14,11 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       animation: {
-        'pulse-slow': 'pulse 3s ease-in-out infinite',
+        "pulse-slow": "pulse 3s ease-in-out infinite",
       },
-      
     },
   },
-  plugins: [],
+  plugins: [scrollbar()],
 };
 
 export default config;

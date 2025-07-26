@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-const Player = dynamic(() => import("@lottiefiles/react-lottie-player").then(mod => mod.Player), {
-  ssr: false,
-});
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  {
+    ssr: false,
+  }
+);
 
 import { useEffect, useRef, useState } from "react";
 
@@ -150,14 +153,8 @@ const AboutUs = () => {
 
       {/* FEATURES */}
       <div className="bg-gray-50 py-20 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-20">
           {[
-            {
-              image: "/icons/iso-certified.png",
-              title: "ISO 9001:2015 Certified",
-              text: "Globally recognized quality management system to ensure high standards in every delivery.",
-              style: "object-contain",
-            },
             {
               image: "/icons/equipment.jpg",
               title: "Advanced Equipment",
@@ -177,13 +174,13 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
-              className="flex flex-col items-center text-center space-y-4"
+              className="w-full max-w-[280px] flex flex-col items-center text-center space-y-4"
             >
-              <div className="w-full max-w-[180px] h-[120px] bg-white rounded-md overflow-hidden shadow-md border border-gray-200">
+              <div className="w-full h-[120px] bg-white rounded-md overflow-hidden shadow-md border border-gray-200">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={180}
+                  width={280}
                   height={120}
                   className={`${item.style} w-full h-full`}
                 />
@@ -191,7 +188,7 @@ const AboutUs = () => {
               <h4 className="text-lg font-semibold text-green-700">
                 {item.title}
               </h4>
-              <p className="text-sm text-gray-600 max-w-xs">{item.text}</p>
+              <p className="text-sm text-gray-600">{item.text}</p>
             </motion.div>
           ))}
         </div>

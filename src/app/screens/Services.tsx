@@ -208,7 +208,6 @@ const Services = () => {
   return (
     <section className="bg-white text-gray-800">
       {/* HERO */}
-      {/* HERO */}
       <div className="relative w-full h-[80vh]">
         <Image
           src="/images/services/servicesBanner.jpg"

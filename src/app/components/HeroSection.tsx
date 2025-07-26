@@ -42,11 +42,12 @@ const HeroSection = () => {
     }
   }, [inView, controls]);
 
-
   const router = useRouter();
 
   return (
     <section className="bg-white w-full min-h-screen relative overflow-x-hidden">
+      {/* <section className="bg-white w-full min-h-screen relative overflow-x-hidden lg:overflow-y-auto lg:max-h-screen lg:scrollbar-thin lg:scrollbar-thumb-green-600 lg:scrollbar-track-gray-100"> */}
+
       {/* <Navbar /> */}
 
       {/* Hero Section */}
@@ -84,9 +85,10 @@ const HeroSection = () => {
             of experience in engineering excellence empower us to deliver
             future-ready infrastructure and services that drive progress.
           </p>
-          <button 
-          onClick={() => router.push(`/about`)}
-          className="mt-2 bg-green-400 text-white font-semibold px-5 py-2 rounded hover:bg-green-500 transition-all">
+          <button
+            onClick={() => router.push(`/about`)}
+            className="mt-2 bg-green-400 text-white font-semibold px-5 py-2 rounded hover:bg-green-500 transition-all"
+          >
             Learn More
           </button>
         </motion.div>
@@ -97,7 +99,7 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full lg:w-[60%] ml-auto mt-10 lg:mt-[-5rem] 2xl:mt-[-7rem] px-0 lg:px-0 lg:pr-0 relative"
+          className="w-full lg:w-[60%] ml-auto mt-10 lg:mt-[-3rem] 2xl:mt-[-5rem] px-0 lg:px-0 lg:pr-0 relative"
         >
           <div className="w-full lg:w-[calc(100vw-75%)] 2xl:w-[calc(100vw-74%)] ml-auto">
             <Image

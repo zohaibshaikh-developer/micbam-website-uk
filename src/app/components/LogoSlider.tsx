@@ -11,15 +11,58 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
+// const logos = [
+//   "/images/clients/dangote-sugar.jpg",
+//   "/images/clients/dangote-cement.jpg",
+//   "/images/clients/cadbury.jpg",
+//   "/images/clients/shell.png",
+//   "/images/clients/GUINNESS.png",
+//   "/images/clients/bua.png",
+//   "/images/clients/jof_nigeria_limited.jpg",
+//   "/images/clients/ayoola-foods.png",
+// ];
+
 const logos = [
-  "/images/clients/dangote-sugar.jpg",
-  "/images/clients/dangote-cement.jpg",
-  "/images/clients/cadbury.jpg",
-  "/images/clients/shell.png",
-  "/images/clients/GUINNESS.png",
-  "/images/clients/bua.png",
-  "/images/clients/jof_nigeria_limited.jpg",
-  "/images/clients/ayoola-foods.png",
+  {
+    src: "/images/clients/dangote-sugar.jpg",
+    alt: "Dangote Sugar",
+    link: "https://sugar.dangote.com/",
+  },
+  {
+    src: "/images/clients/dangote-cement.jpg",
+    alt: "Dangote Cement",
+    link: "https://www.dangotecement.com/",
+  },
+  {
+    src: "/images/clients/cadbury.jpg",
+    alt: "Cadbury",
+    link: "https://www.cadbury.co.uk/",
+  },
+  {
+    src: "/images/clients/shell.png",
+    alt: "Shell Nigeria",
+    link: "https://www.shell.com.ng/",
+  },
+  {
+    src: "/images/clients/GUINNESS.png",
+    alt: "Guinness Nigeria",
+    link: "https://www.guinness-nigeria.com/",
+  },
+  {
+    src: "/images/clients/bua.png",
+    alt: "BUA Group",
+    link: "https://www.buagroup.com/",
+  },
+  {
+    src: "/images/clients/jof_nigeria_limited.jpg",
+    alt: "JOF Nigeria",
+    link: "https://jofnigeria.com/",
+  },
+  {
+    src: "/images/clients/ayoola-foods.png",
+    alt: "Ayoola Foods",
+    link: "https://www.ayoolafoodsng.com/",
+  },
 ];
 
 const LogoSlider = () => {
@@ -94,15 +137,20 @@ const LogoSlider = () => {
                 key={index}
                 className="flex justify-center items-center"
               >
-                <div className="w-24 sm:w-28 md:w-32 h-16 sm:h-20 flex items-center justify-center">
+                <a
+                  href={logo.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-24 sm:w-28 md:w-32 h-16 sm:h-20 flex items-center justify-center"
+                >
                   <Image
-                    src={logo}
-                    alt={`Client ${index + 1}`}
+                    src={logo.src}
+                    alt={logo.alt}
                     width={128}
                     height={80}
                     className="object-contain w-full h-full grayscale hover:grayscale-0 transition duration-300 ease-in-out"
                   />
-                </div>
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>
