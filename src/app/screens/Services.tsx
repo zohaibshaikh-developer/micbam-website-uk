@@ -235,7 +235,7 @@ const Services = () => {
       </div>
 
       {/* TABS */}
-      <div className="sticky top-0 z-10 bg-gray-100 shadow-sm">
+      <div className=" top-0 z-10 bg-gray-100 shadow-sm">
         <div className="overflow-x-auto scrollbar-hide">
           <div className="max-w-7xl mx-auto flex gap-4 px-4 py-6 sm:grid sm:grid-cols-3 lg:grid-cols-5">
             {services.map((service, idx) => (
