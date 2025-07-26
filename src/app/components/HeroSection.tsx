@@ -46,8 +46,6 @@ const HeroSection = () => {
 
   return (
     <section className="bg-white w-full min-h-screen relative overflow-x-hidden">
-      {/* <section className="bg-white w-full min-h-screen relative overflow-x-hidden lg:overflow-y-auto lg:max-h-screen lg:scrollbar-thin lg:scrollbar-thumb-green-600 lg:scrollbar-track-gray-100"> */}
-
       {/* <Navbar /> */}
 
       {/* Hero Section */}

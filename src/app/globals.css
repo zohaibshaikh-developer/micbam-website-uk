@@ -86,3 +86,9 @@ html, body {
 .dark .scrollbar-thin::-webkit-scrollbar-thumb {
   background-color: #22c55e; /* green-500 */
 }
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
